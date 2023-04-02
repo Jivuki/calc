@@ -1,0 +1,79 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.main-forms-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  flex-basis: 48%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.form-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+.form-container h2 {
+  margin-top: 0;
+}
+.form-group {
+  margin-bottom: 10px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+.form-group input {
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #45a049;
+}
+.subform-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.subform {
+  flex-basis: 48%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+.subform input[type="number"]::-webkit-inner-spin-button,
+.subform input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.stairs-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.stairs-group > div {
+  margin-bottom: 10px;
+}
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+}
