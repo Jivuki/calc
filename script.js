@@ -33,14 +33,19 @@ function calculateLinearFeet() {
 
   // Calculate linear feet and total cost
   var linearFeet = 0;
+  var totalPrice = 0;
   if (!isNaN(baseboardLength) && !isNaN(installationPrice)) {
     linearFeet = baseboardLength;
+    totalPrice = baseboardLength * installationPrice;
   }
-  var totalPrice = installationPrice * linearFeet;
 
   // Display the results in the HTML
-  document.getElementById("linearFeetResult").innerText = '$' + linearFeet.toFixed(2); // Add a dollar sign here
-  document.getElementById("totalPriceResultLFt").innerText = '$' + totalPrice.toFixed(2);
+  document.getElementById("linearFeetResult").innerText = '';
+  document.getElementById("totalPriceLabel").innerText = '';
+ 
+  if (totalPrice > 0) {
+    document.getElementById("totalPriceLabel").innerText = 'Total Price: $' + totalPrice.toFixed(2);
+  }
 }
 
 function calculateStairsInstallation() {
@@ -70,8 +75,8 @@ function calculateSqFtPrice() {
 }
 
 function calculateLFtPrice() {
-  var installationPrice = parseFloat(document.getElementById("lftPrice").value);
-  var linearFeet = parseFloat(document.getElementById("linearFeetResult").textContent);
+  var installationPrice = parseFloat(document.getElementById("linearFtPrice").value);
+  var linearFeet = parseFloat(document.getElementById("baseboardLength").value);
   if (!isNaN(installationPrice) && !isNaN(linearFeet)) {
     var totalPrice = installationPrice * linearFeet;
     document.getElementById("totalPriceResultLFt").textContent = "$" + totalPrice.toFixed(2);
@@ -84,7 +89,7 @@ function calculateStepPrice() {
 
   if (!isNaN(steps) && !isNaN(stepPrice)) {
     var totalPrice = steps * stepPrice;
-    document.getElementById("stairsInstallationResult").innerText = '$' + totalPrice.toFixed(2);
+    document.getElementById("stepsInstallationResult").innerText = '$' + totalPrice.toFixed(2);
   }
 }
 
@@ -94,8 +99,20 @@ function calculateRiserPrice() {
 
   if (!isNaN(risers) && !isNaN(riserPrice)) {
     var totalPrice = risers * riserPrice;
-    document.getElementById("stairsInstallationResult").innerText = '$' + totalPrice.toFixed(2);
+    document.getElementById("risersInstallationResult").innerText = '$' + totalPrice.toFixed(2);
   }
+}
+
+function calculateStairsTotal() {
+  var stepsInstallation = parseFloat(document.getElementById("stepsInstallationResult").innerText.replace('$', ''));
+  var risersInstallation = parseFloat(document.getElementById("risersInstallationResult").innerText.replace('$', ''));
+
+  if (isNaN(stepsInstallation)) stepsInstallation = 0;
+  if (isNaN(risersInstallation)) risersInstallation = 0;
+
+  var stairsTotal = stepsInstallation + risersInstallation;
+
+  document.getElementById("stairsTotalResult").innerText = '$' + stairsTotal.toFixed(2);
 }
 
 function calculateSandingJobPrice() {

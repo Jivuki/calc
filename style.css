@@ -77,3 +77,16 @@ button:hover {
   width: 150px;
   height: 150px;
 }
+.subform-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.subform-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+.subform-row.single {
+  justify-content: center;
+}
