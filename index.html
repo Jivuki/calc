@@ -53,50 +53,68 @@
       </div>
   </div>
 
-  <div class="subform-wrapper">
-	<div class="subform-row">
-		<div class="subform subform1">
-		  <h2>Linear Feet Calculation</h2>
-		  <div class="form-group">
-			<label for="baseboardLength">Baseboard Length:</label>
-			<input type="number" id="baseboardLength" step="0.01">
-		  </div>
-		  <div class="form-group">
-			<label for="linearFtPrice">Installation Price per Linear Foot:</label>
-			<input type="number" id="linearFtPrice" step="0.01">
-		  </div>
-		  <button onclick="calculateLFtPrice()">Calculate</button>
-		  <p>Total Price: <span id="totalPriceResultLFt">0</span></p>
-		</div>
+    <div class="subform-wrapper">
+		<div class="subform-row">
+			<div class="subform subform1">
+			  <h2>Linear Feet Calculation</h2>
+				  <div class="form-group">
+					<label for="baseboardLength">Baseboard Length:</label>
+					<input type="number" id="baseboardLength" step="0.01">
+				  </div>
+				  <div class="form-group">
+					<label for="linearFtPrice">Installation Price per Linear Foot:</label>
+					<input type="number" id="linearFtPrice" step="0.01">
+				  </div>
+				  <button onclick="calculateLFtPrice()">Calculate</button>
+				  <p>Total Price: <span id="totalPriceResultLFt">0</span></p>
+			</div>
 
-		<div class="subform subform2">
-		  <h2>Stairs Installation Calculation</h2>
-		  <div class="stairs-group">
-			<div>
-			  <label for="steps">Number of Steps:</label>
-			  <input type="number" id="steps">
+			<div class="subform subform2">
+			  <h2>Stairs Installation Calculation</h2>
+				  <div class="stairs-group">
+					<div>
+					  <label for="steps">Number of Steps:</label>
+					  <input type="number" id="steps">
+					</div>
+					<div>
+					  <label for="stepPrice">Price per step:</label>
+					  <input type="number" id="stepPrice" step="0.01">
+					</div>
+					<button onclick="calculateStepPrice()">Calculate</button>
+					<p>Steps Installation: <span id="stepsInstallationResult">0</span></p>
+					<div>
+					  <label for="risers">Number of Risers:</label>
+					  <input type="number" id="risers">
+					</div>
+					<div>
+					  <label for="riserPrice">Price per riser:</label>
+					  <input type="number" id="riserPrice" step="0.01">
+					</div>
+					<button onclick="calculateRiserPrice()">Calculate</button>
+					<p>Risers Installation: <span id="risersInstallationResult">0</span></p>
+					<button onclick="calculateStairsTotal()">Calculate Stairs Total</button>
+					<p>Stairs Total: <span id="stairsTotalResult">0</span></p>
+				  </div>
 			</div>
-			<div>
-			  <label for="stepPrice">Price per step:</label>
-			  <input type="number" id="stepPrice" step="0.01">
-			</div>
-			<button onclick="calculateStepPrice()">Calculate</button>
-			<p>Steps Installation: <span id="stepsInstallationResult">0</span></p>
-			<div>
-			  <label for="risers">Number of Risers:</label>
-			  <input type="number" id="risers">
-			</div>
-			<div>
-			  <label for="riserPrice">Price per riser:</label>
-			  <input type="number" id="riserPrice" step="0.01">
-			</div>
-			<button onclick="calculateRiserPrice()">Calculate</button>
-			<p>Risers Installation: <span id="risersInstallationResult">0</span></p>
-			<button onclick="calculateStairsTotal()">Calculate Stairs Total</button>
-			<p>Stairs Total: <span id="stairsTotalResult">0</span></p>
-		  </div>
 		</div>
-	
-  </div>
+    </div>
+	<div class="main-forms-wrapper">	
+		<div class="form-container">
+			<h2>Demolition Calculations</h2>
+			<div class="form-group">
+				<label for="demoWidth">Width (feet):</label>
+				<input type="number" id="demoWidth" step="0.01">
+			</div>
+			<div class="form-group">
+				<label for="demoLength">Length (feet):</label>
+				<input type="number" id="demoLength" step="0.01">
+			</div>
+			<button onclick="calculateDemolitionArea()">Calculate</button>
+			<p>Demolition Area: <span id="demolitionAreaResult"></span> sqft</p>
+		</div>
+			<div class="form-container">
+			  <h2>Total calc</h2>
+			</div>
+	</div>	
 </body>
 </html>

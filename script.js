@@ -135,3 +135,15 @@ function calculateFlooringTotal() {
 
   document.getElementById("flooringTotal").value = flooringTotal.toFixed(2);
 }
+
+function calculateDemolitionArea() {
+  var demoWidth = parseFloat(document.getElementById("demoWidth").value);
+  var demoLength = parseFloat(document.getElementById("demoLength").value);
+
+  if (!isNaN(demoWidth) && !isNaN(demoLength)) {
+    var demolitionArea = demoWidth * demoLength;
+    document.getElementById("demolitionAreaResult").innerText = demolitionArea.toFixed(2);
+  } else {
+    document.getElementById("demolitionAreaResult").innerText = '';
+  }
+}
